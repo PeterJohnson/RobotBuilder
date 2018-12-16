@@ -53,7 +53,7 @@ public class ExportFile {
         // Export
         if (!export.exists() || update.equals("Overwrite") || !newType.equals(oldType)) {
             System.out.println("Overwriting " + export);
-			if (isBinaryFile) {
+            if (isBinaryFile) {
                 // Don't attempt to parse binary files - they get corrupted if run through Velocity
                 IOUtils.copy(Utils.getResourceAsStream(source), Files.newOutputStream(export.toPath()));
             } else {
